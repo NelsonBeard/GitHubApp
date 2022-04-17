@@ -5,7 +5,7 @@ import com.geekbrains.githubapp.domain.UsersRepo
 
 class MockUsersRepoImpl: UsersRepo{
     override fun getUsersList(): List<User> {
-        val usersList = listOf(
+        return listOf(
             User("Ben Askren"),
             User("Khamzat Chimaev"),
             User("Gilbert Burns"),
@@ -17,6 +17,5 @@ class MockUsersRepoImpl: UsersRepo{
             User("Jorge Masvidal"),
             User("Jiri Prochazka"),
         )
-        return usersList
     }
 }

@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="user_name_textSize">20sp</dimen>
-    <dimen name="users_list_paddingTop">50dp</dimen>
 </resources>
