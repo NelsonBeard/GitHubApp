@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.UsersListActivity"
-    android:paddingTop="@dimen/users_list_paddingTop">
+    tools:context=".ui.UsersListActivity">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/users_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:listitem="@layout/users_list_item"/>
