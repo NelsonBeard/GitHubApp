@@ -1,4 +1,4 @@
-package com.geekbrains.githubapp.ui
+package com.geekbrains.githubapp.ui.users_list
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

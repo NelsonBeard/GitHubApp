@@ -6,16 +6,16 @@ import com.geekbrains.githubapp.domain.UsersRepo
 class MockUsersRepoImpl: UsersRepo{
     override fun getUsersList(): List<User> {
         return listOf(
-            User("Ben Askren"),
-            User("Khamzat Chimaev"),
-            User("Gilbert Burns"),
-            User("Diego Sanchez"),
-            User("Max Holloway"),
-            User("Dustin Porier"),
-            User("Justin Gaetje"),
-            User("Petr Yan"),
-            User("Jorge Masvidal"),
-            User("Jiri Prochazka"),
+            User("fabpot"),
+            User("andrew"),
+            User("taylorotwell"),
+            User("egoist"),
+            User("HugoGiraudel"),
+            User("ornicar"),
+            User("bebraw"),
+            User("nelsonic"),
+            User("alexcrichton"),
+            User("jonathanong"),
         )
     }
 }

@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/user_name"
-        android:layout_width="match_parent"
+        android:id="@+id/repository"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/users_name_margin"
-        android:textSize="@dimen/user_name_textSize"
-        tools:text="User Name" />
+        android:text="Repository"
+        android:layout_margin="@dimen/user_repository_margin"/>
 
 </LinearLayout>

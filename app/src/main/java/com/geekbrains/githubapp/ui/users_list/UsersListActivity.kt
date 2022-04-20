@@ -1,13 +1,14 @@
-package com.geekbrains.githubapp.ui
+package com.geekbrains.githubapp.ui.users_list
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.geekbrains.githubapp.databinding.ActivityUsersListBinding
-import com.geekbrains.githubapp.ui.UsersListRecyclerView.UsersListAdapter
+import com.geekbrains.githubapp.ui.user_profile.UserProfileActivity
 
 class UsersListActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityUsersListBinding
     private lateinit var viewModel: UsersListViewModel
     private val adapter = UsersListAdapter()
@@ -19,13 +20,20 @@ class UsersListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         viewModel = ViewModelProvider(this)[UsersListViewModel::class.java]
+
         initUsersList()
+
+        adapter.listener = UsersListAdapter.OnItemClick { user ->
+            val intent = Intent(this, UserProfileActivity::class.java)
+            intent.putExtra("NAME", user.name)
+            startActivity(intent)
+        }
     }
 
     private fun initUsersList() {
         viewModel.getData().observe(this) {
-            binding.usersRecyclerView.layoutManager = LinearLayoutManager(this)
-            binding.usersRecyclerView.adapter = adapter
+            binding.usersListRecyclerView.adapter = adapter
         }
     }
+
 }
