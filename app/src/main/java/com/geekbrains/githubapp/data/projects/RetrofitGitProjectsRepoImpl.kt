@@ -1,0 +1,21 @@
+package com.geekbrains.githubapp.data.projects
+
+import com.geekbrains.githubapp.domain.project.GitProject
+import com.geekbrains.githubapp.domain.project.GitProjectsRepo
+import io.reactivex.rxjava3.core.Single
+import retrofit2.Retrofit
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
+import retrofit2.converter.gson.GsonConverterFactory
+
+class RetrofitGitProjectsRepoImpl : GitProjectsRepo {
+    private val retrofit = Retrofit.Builder()
+        .baseUrl("https://api.github.com/")
+        .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create())
+        .build()
+    private val api: GitApi = retrofit.create(GitApi::class.java)
+
+    override fun showProjects(userName: String): Single<List<GitProject>> {
+        return api.getProjects(userName)
+    }
+}

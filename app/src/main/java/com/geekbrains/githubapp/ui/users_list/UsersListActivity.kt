@@ -25,7 +25,7 @@ class UsersListActivity : AppCompatActivity() {
 
         adapter.listener = UsersListAdapter.OnItemClick { user ->
             val intent = Intent(this, UserProfileActivity::class.java)
-            intent.putExtra("NAME", user.name)
+            intent.putExtra("NAME", user.userName)
             startActivity(intent)
         }
     }

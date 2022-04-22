@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.user_profile.UserProfileActivity"
     android:layout_margin="@dimen/user_profile_margin"
@@ -28,6 +29,7 @@
         android:id="@+id/user_profile_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/user_profile_item"/>
+        tools:listitem="@layout/user_profile_item"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
 
 </LinearLayout>
