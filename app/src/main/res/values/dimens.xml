@@ -1,4 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="user_name_textSize">20sp</dimen>
+    <dimen name="users_list_paddingTop">50dp</dimen>
+    <dimen name="users_name_margin">10dp</dimen>
+    <dimen name="user_profile_margin">5dp</dimen>
+    <dimen name="repository_item_margin">5dp</dimen>
+    <dimen name="profile_image_view_size">150dp</dimen>
+    <dimen name="repository_item_text_size">20sp</dimen>
 </resources>
