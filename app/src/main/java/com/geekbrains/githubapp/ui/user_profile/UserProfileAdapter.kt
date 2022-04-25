@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.geekbrains.githubapp.databinding.UserProfileItemBinding
-import com.geekbrains.githubapp.domain.project.GitProject
+import com.geekbrains.githubapp.domain.entity.GitProject
 
 class UserProfileAdapter : RecyclerView.Adapter<UserProfileAdapter.UserProfileViewHolder>() {
 
@@ -20,7 +20,7 @@ class UserProfileAdapter : RecyclerView.Adapter<UserProfileAdapter.UserProfileVi
     ) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: GitProject) {
-            binding.repository.text = item.name
+            binding.repositoryItemTextView.text = item.name
         }
     }
 
@@ -32,7 +32,9 @@ class UserProfileAdapter : RecyclerView.Adapter<UserProfileAdapter.UserProfileVi
         return UserProfileViewHolder(UserProfileItemBinding.inflate(inflater))
     }
 
-    override fun onBindViewHolder(holder: UserProfileViewHolder, position: Int) {
+    override fun onBindViewHolder(
+        holder: UserProfileViewHolder, position: Int
+    ) {
         holder.bind(getItem(position))
     }
 

@@ -3,8 +3,8 @@ package com.geekbrains.githubapp.ui.user_profile
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.geekbrains.githubapp.domain.project.GitProject
-import com.geekbrains.githubapp.domain.project.GitProjectsRepo
+import com.geekbrains.githubapp.domain.entity.GitProject
+import com.geekbrains.githubapp.domain.usecase.GitProjectsRepo
 import io.reactivex.rxjava3.disposables.CompositeDisposable
 import io.reactivex.rxjava3.kotlin.subscribeBy
 

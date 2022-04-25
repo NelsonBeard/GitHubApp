@@ -5,10 +5,11 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/repository"
+        android:id="@+id/repository_item_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Repository"
-        android:layout_margin="@dimen/user_repository_margin"/>
+        android:textSize="@dimen/repository_item_text_size"
+        android:layout_margin="@dimen/repository_item_margin"/>
 
 </LinearLayout>

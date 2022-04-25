@@ -6,8 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.user_profile.UserProfileActivity"
-    android:layout_margin="@dimen/user_profile_margin"
-    android:id="@+id/user_profile_layout">
+    android:layout_margin="@dimen/user_profile_margin">
 
     <ImageView
         android:layout_width="@dimen/profile_image_view_size"
@@ -17,7 +16,7 @@
         android:contentDescription="User profile picture" />
 
     <TextView
-        android:id="@+id/user_name"
+        android:id="@+id/user_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="@dimen/user_name_textSize"

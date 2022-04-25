@@ -1,7 +1,7 @@
-package com.geekbrains.githubapp.data.projects
+package com.geekbrains.githubapp.data.web
 
-import com.geekbrains.githubapp.domain.project.GitProject
-import com.geekbrains.githubapp.domain.project.GitProjectsRepo
+import com.geekbrains.githubapp.domain.entity.GitProject
+import com.geekbrains.githubapp.domain.usecase.GitProjectsRepo
 import io.reactivex.rxjava3.core.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
