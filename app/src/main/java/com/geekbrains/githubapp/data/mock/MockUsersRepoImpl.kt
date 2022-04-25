@@ -1,9 +1,9 @@
-package com.geekbrains.githubapp.data.users
+package com.geekbrains.githubapp.data.mock
 
-import com.geekbrains.githubapp.domain.user.User
-import com.geekbrains.githubapp.domain.user.UsersRepo
+import com.geekbrains.githubapp.domain.entity.User
+import com.geekbrains.githubapp.domain.usecase.UsersRepo
 
-class MockUsersRepoImpl: UsersRepo {
+class MockUsersRepoImpl : UsersRepo {
     override fun getUsersList(): List<User> {
         return listOf(
             User("fabpot"),

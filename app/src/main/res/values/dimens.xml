@@ -6,4 +6,5 @@
     <dimen name="user_profile_margin">5dp</dimen>
     <dimen name="user_repository_margin">5dp</dimen>
     <dimen name="profile_image_view_size">150dp</dimen>
+    <dimen name="item_repository_text_size">20sp</dimen>
 </resources>

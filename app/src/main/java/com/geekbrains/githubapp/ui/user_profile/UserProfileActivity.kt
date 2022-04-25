@@ -27,14 +27,13 @@ class UserProfileActivity : AppCompatActivity() {
         binding.userProfileRecyclerView.adapter = adapter
 
         val userName = intent.extras?.getString("NAME").toString()
-        binding.userName.text = userName
+        binding.itemUserName.text = userName
 
         viewModel.apply {
             getProjects(userName)
             projects.observe(this@UserProfileActivity) {
                 adapter.setData(it)
             }
-
         }
     }
 }

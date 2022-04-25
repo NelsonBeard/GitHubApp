@@ -3,9 +3,9 @@ package com.geekbrains.githubapp.ui.users_list
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.geekbrains.githubapp.data.users.MockUsersRepoImpl
+import com.geekbrains.githubapp.data.mock.MockUsersRepoImpl
 import com.geekbrains.githubapp.databinding.UsersListItemBinding
-import com.geekbrains.githubapp.domain.user.User
+import com.geekbrains.githubapp.domain.entity.User
 
 class UsersListAdapter : RecyclerView.Adapter<UsersListAdapter.UsersListViewHolder>() {
 
@@ -37,7 +37,7 @@ class UsersListAdapter : RecyclerView.Adapter<UsersListAdapter.UsersListViewHold
     ) : RecyclerView.ViewHolder(binding.root) {
         fun bind(user: User) {
             itemView.apply {
-                binding.userName.text = user.userName
+                binding.itemUserName.text = user.userName
                 setOnClickListener {
                     listener?.onClick(user)
                 }
