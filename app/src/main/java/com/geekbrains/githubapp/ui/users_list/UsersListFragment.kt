@@ -23,7 +23,6 @@ class UsersListFragment : Fragment() {
         fun newInstance() = UsersListFragment()
     }
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
