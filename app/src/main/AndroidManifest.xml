@@ -13,12 +13,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GitHubApp">
         <activity
-            android:name=".ui.users_list.UsersListActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.user_profile.UserProfileActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>

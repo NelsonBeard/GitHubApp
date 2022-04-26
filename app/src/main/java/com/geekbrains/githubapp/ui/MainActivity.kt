@@ -16,10 +16,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val usersListFragment: Fragment = UsersListFragment()
         supportFragmentManager
             .beginTransaction()
-            .add(binding.mainContainerLayout.id, usersListFragment)
+            .add(binding.mainContainerLayout.id, UsersListFragment.newInstance())
             .commit()
     }
 }

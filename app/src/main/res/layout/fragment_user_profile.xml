@@ -1,34 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/user_profile_margin"
     android:orientation="vertical"
-    tools:context=".ui.user_profile.UserProfileActivity"
-    android:layout_margin="@dimen/user_profile_margin">
+    tools:context=".ui.user_profile.UserProfileFragment">
 
     <ImageView
         android:layout_width="@dimen/profile_image_view_size"
         android:layout_height="@dimen/profile_image_view_size"
         android:layout_gravity="center"
-        android:src="@drawable/profile_picture_common"
-        android:contentDescription="User profile picture" />
+        android:contentDescription="User profile picture"
+        android:src="@drawable/profile_picture_common" />
 
     <TextView
         android:id="@+id/user_name_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="@dimen/user_name_textSize"
+        android:layout_gravity="center"
         android:layout_margin="@dimen/users_name_margin"
-        tools:text="User Name"
-        android:layout_gravity="center"/>
+        android:textSize="@dimen/user_name_textSize"
+        tools:text="User Name" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/user_profile_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:listitem="@layout/user_profile_item"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/user_profile_item" />
 
 </LinearLayout>
