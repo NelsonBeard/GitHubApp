@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".ui.users_list.UsersListActivity">
+    tools:context=".ui.users_list.UsersListFragment">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/users_list_recycler_view"

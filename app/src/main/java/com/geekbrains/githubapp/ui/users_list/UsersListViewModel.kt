@@ -9,10 +9,8 @@ import com.geekbrains.githubapp.domain.entity.User
 class UsersListViewModel(
     private val liveDataForViewToObserve: MutableLiveData<List<User>> = MutableLiveData()
 ) : ViewModel() {
-
-    fun getData(): LiveData<List<User>>{
+    fun getData(): LiveData<List<User>> {
         liveDataForViewToObserve.value = MockUsersRepoImpl().getUsersList()
         return liveDataForViewToObserve
     }
-
 }
