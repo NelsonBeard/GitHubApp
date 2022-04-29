@@ -5,7 +5,7 @@ import io.reactivex.rxjava3.core.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface GitApi {
+interface GitApiDTO {
     @GET("users/{user}/repos")
-    fun getProjects(@Path("user") user: String): Single<List<GitProject>>
+    fun getProjects(@Path("user") userName: String): Single<List<GitProject>>
 }
