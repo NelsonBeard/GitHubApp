@@ -4,11 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import com.geekbrains.githubapp.R
-import com.geekbrains.githubapp.app
 import com.geekbrains.githubapp.databinding.FragmentUserProfileBinding
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class UserProfileFragment : Fragment() {
     private val adapter = UserProfileAdapter()
@@ -46,9 +45,7 @@ class UserProfileFragment : Fragment() {
         val userName = arguments?.getString("NAME").toString()
         binding.userNameTextView.text = userName
 
-        val viewModel: UserProfileViewModel by requireActivity().viewModels {
-            ProjectsViewModelFactory(app.gitProjectsRepo)
-        }
+        val viewModel: UserProfileViewModel by viewModel()
 
         viewModel.apply {
             getProjects(userName)

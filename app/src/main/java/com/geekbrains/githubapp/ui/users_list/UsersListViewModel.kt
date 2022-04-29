@@ -6,11 +6,12 @@ import androidx.lifecycle.ViewModel
 import com.geekbrains.githubapp.data.mock.MockUsersRepoImpl
 import com.geekbrains.githubapp.domain.entity.User
 
-class UsersListViewModel(
-    private val liveDataForViewToObserve: MutableLiveData<List<User>> = MutableLiveData()
-) : ViewModel() {
+class UsersListViewModel : ViewModel() {
+
+    private var users: MutableLiveData<List<User>> = MutableLiveData()
+
     fun getData(): LiveData<List<User>> {
-        liveDataForViewToObserve.value = MockUsersRepoImpl().getUsersList()
-        return liveDataForViewToObserve
+        users.value = MockUsersRepoImpl().getUsersList()
+        return users
     }
 }
