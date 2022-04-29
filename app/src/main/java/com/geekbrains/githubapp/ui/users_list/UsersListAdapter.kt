@@ -3,13 +3,13 @@ package com.geekbrains.githubapp.ui.users_list
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.geekbrains.githubapp.data.mock.MockUsersRepoImpl
+import com.geekbrains.githubapp.data.mock.MockUsersRepoImplDAO
 import com.geekbrains.githubapp.databinding.UsersListItemBinding
 import com.geekbrains.githubapp.domain.entity.User
 
 class UsersListAdapter : RecyclerView.Adapter<UsersListAdapter.UsersListViewHolder>() {
 
-    private val usersList: List<User> = MockUsersRepoImpl().getUsersList()
+    private val usersList: List<User> = MockUsersRepoImplDAO().getUsersList()
     var listener: OnItemClick? = null
 
     override fun onCreateViewHolder(
