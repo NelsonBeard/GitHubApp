@@ -3,7 +3,7 @@ package com.geekbrains.githubapp.data.mock
 import com.geekbrains.githubapp.domain.entity.User
 import com.geekbrains.githubapp.domain.usecase.UsersRepo
 
-class MockUsersRepoImpl : UsersRepo {
+class MockUsersRepoImplDAO : UsersRepo {
     override fun getUsersList(): List<User> {
         return listOf(
             User("fabpot"),
