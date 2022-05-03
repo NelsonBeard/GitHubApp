@@ -1,10 +1,8 @@
 package com.geekbrains.githubapp.di
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import com.geekbrains.githubapp.data.web.GitApi
-import com.geekbrains.githubapp.data.web.RetrofitGitProjectsRepoImpl
-import com.geekbrains.githubapp.domain.usecase.GitProjectsRepo
+import com.geekbrains.githubapp.data.web.GitApiDTO
+import com.geekbrains.githubapp.data.web.RetrofitGitRepoImpl
+import com.geekbrains.githubapp.domain.usecase.GitRepo
 import com.geekbrains.githubapp.ui.user_profile.UserProfileViewModel
 import com.geekbrains.githubapp.ui.users_list.UsersListViewModel
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -18,8 +16,8 @@ private var baseUrl = "https://api.github.com/"
 
 val appModule = module {
 
-    single<GitProjectsRepo> { RetrofitGitProjectsRepoImpl(get()) }
-    single<GitApi> { get<Retrofit>().create(GitApi::class.java) }
+    single<GitRepo> { RetrofitGitRepoImpl(get()) }
+    single<GitApiDTO> { get<Retrofit>().create(GitApiDTO::class.java) }
     single {
         Retrofit.Builder()
             .baseUrl(baseUrl)

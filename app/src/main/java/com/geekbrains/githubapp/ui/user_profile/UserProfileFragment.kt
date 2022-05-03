@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import coil.load
 import com.geekbrains.githubapp.R
 import com.geekbrains.githubapp.databinding.FragmentUserProfileBinding
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -49,8 +50,13 @@ class UserProfileFragment : Fragment() {
 
         viewModel.apply {
             getProjects(userName)
+            getAvatar(userName)
             projects.observe(viewLifecycleOwner) {
                 adapter.setData(it)
+            }
+
+            avatar.observe(viewLifecycleOwner){
+                binding.avatarImageView.load(it.avatar_url)
             }
         }
     }
