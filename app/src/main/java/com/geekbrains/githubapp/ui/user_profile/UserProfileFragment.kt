@@ -4,11 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import coil.load
 import com.geekbrains.githubapp.R
+import com.geekbrains.githubapp.app
 import com.geekbrains.githubapp.databinding.FragmentUserProfileBinding
-import org.koin.androidx.viewmodel.ext.android.viewModel
+import com.geekbrains.githubapp.domain.usecase.GitRepo
+import javax.inject.Inject
 
 class UserProfileFragment : Fragment() {
     private val adapter = UserProfileAdapter()
@@ -16,6 +19,9 @@ class UserProfileFragment : Fragment() {
     private var _binding: FragmentUserProfileBinding? = null
     private val binding: FragmentUserProfileBinding
         get() = _binding!!
+
+    @Inject
+    lateinit var gitRepo: GitRepo
 
     companion object {
         fun newInstance(bundle: Bundle): UserProfileFragment {
@@ -36,6 +42,8 @@ class UserProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        app.appDependenciesComponent.inject(this)
+
         _binding = FragmentUserProfileBinding.bind(view)
         initProfile()
     }
@@ -46,7 +54,9 @@ class UserProfileFragment : Fragment() {
         val userName = arguments?.getString("NAME").toString()
         binding.userNameTextView.text = userName
 
-        val viewModel: UserProfileViewModel by viewModel()
+        val viewModel: UserProfileViewModel by requireActivity().viewModels {
+            GitViewModelFactory(gitRepo)
+        }
 
         viewModel.apply {
             getProjects(userName)
@@ -55,7 +65,7 @@ class UserProfileFragment : Fragment() {
                 adapter.setData(it)
             }
 
-            avatar.observe(viewLifecycleOwner){
+            avatar.observe(viewLifecycleOwner) {
                 binding.avatarImageView.load(it.avatar_url)
             }
         }
