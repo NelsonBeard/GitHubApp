@@ -9,11 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import com.geekbrains.githubapp.R
 import com.geekbrains.githubapp.databinding.FragmentUsersListBinding
 import com.geekbrains.githubapp.ui.user_profile.UserProfileFragment
-import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class UsersListFragment : Fragment() {
 
-    private val viewModel: UsersListViewModel by viewModel()
+    private lateinit var  viewModel: UsersListViewModel
     private val adapter = UsersListAdapter()
 
     private var _binding: FragmentUsersListBinding? = null
@@ -51,6 +50,7 @@ class UsersListFragment : Fragment() {
     }
 
     private fun initUsersList() {
+        viewModel = ViewModelProvider(this)[UsersListViewModel::class.java]
         viewModel.getData().observe(viewLifecycleOwner) {
             binding.usersListRecyclerView.adapter = adapter
         }
