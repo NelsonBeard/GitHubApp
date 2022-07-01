@@ -21,4 +21,12 @@ class MockUsersRepoImplDAO : UsersRepo {
             User("borhammere")
         )
     }
+
+    fun usersCounter(): Int {
+        return getUsersList().size
+    }
+
+    fun getFirstUserName():String{
+        return getUsersList()[0].userName
+    }
 }
